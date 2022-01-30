@@ -1,17 +1,16 @@
 package devices;
 
-public class Car   {
+
+public class Car extends Devices  {
     String color;
     public Double value;
-     String  producer;
-     String model;
-     Integer yearOfProduction;
-
+    //pokazuje samochód
     public String toString() {
         return producer + " " + model + " " + color + " " + yearOfProduction + " " + value;
     }
-//konstruktor samochodu
+    //konstruktor samochodu
     public Car(String color, Double value) {
+        super("Poland", "BMW", 2000);
         this.color = color;
         this.value = value;
     }
@@ -24,5 +23,10 @@ public class Car   {
         System.out.println("Year of production of my car is " + this.yearOfProduction);
         System.out.println("Total value of my Car is " + this.value);
         return true;
+    }
+
+    //odpala samochód
+    public void turnOn() {
+        System.out.println("przekreć kluczyk");
     }
 }
