@@ -39,19 +39,5 @@ public class Main {
 
         } else System.out.println("nie");
 
-        //test wszystkiego
-
-        me.setSalary(5000.0);
-        me.setCar(myCar);
-        System.out.println(me.toString());
-        System.out.println(myCar.toString());
-        System.out.println(cat.toString());
-        me.setSalary(6000.0);
-        System.out.println(dog);
-        System.out.println(myCar);
-        System.out.println(notMyCar);
-        System.out.println("llllllllllllllllllll");
-        System.out.println(myCar.hashCode());
-        System.out.println(myCar);
     }
 }
