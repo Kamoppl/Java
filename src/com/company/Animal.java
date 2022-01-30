@@ -41,6 +41,18 @@ public class Animal {
             System.out.println("Your anima is dead, how you want to take him for a walk. Unless you are necromancer");
         }
     }
+
+
+    public String toString() {
+        return "Animal{" +
+                "species='" + species + '\'' +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                ", age=" + age +
+                ", alive=" + alive +
+                '}';
+    }
+
     //karmi zwierze
     public void feed() {
         if (this.alive) weight = weight + 1.0;

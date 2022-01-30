@@ -1,6 +1,7 @@
 package com.company;
 
-import java.time.LocalDate;
+import devices.Car;
+import devices.Phone;
 
 public class Human {
     String firstName;
@@ -19,6 +20,11 @@ public class Human {
         this.lastName = lastName;
         this.age = age;
         this.salary = salary;
+    }
+
+    public String toString() {
+        return firstName + " " + lastName + " " + age + " " + salary + " " + pet;
+
     }
 
     //ustawia nowe wynagrodzenie

@@ -1,5 +1,7 @@
 package com.company;
 
+import devices.Car;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -34,6 +36,12 @@ public class Main {
         //tworzenie 2 samochodów
         Car myCar = new Car("red", 200000.0);
         Car notMyCar = new Car("red", 200000.0);
+        if (myCar.hashCode() == notMyCar.hashCode()) {
+            System.out.println("Tak");
+
+        } else System.out.println("nie");
+
+    //porównuje samochody
         if (myCar.hashCode() == notMyCar.hashCode()) {
             System.out.println("Tak");
 
