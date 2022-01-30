@@ -67,4 +67,12 @@ public class Animal {
             System.out.println("error");
         }
     }
+    public boolean showAnimal() {
+        System.out.println(this.species);
+        System.out.println(this.name);
+        System.out.println(this.weight);
+        System.out.println(this.age);
+        System.out.println("Żywy?");
+        return this.alive;
+    }
 }
