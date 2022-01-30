@@ -62,4 +62,8 @@ public class Human {
         }
 
     }
+
+    public void sale(Human seller, Human buyer, Double price) {
+        System.out.println("Nie możesz kupic człowieka");
+    }
 }

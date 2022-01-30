@@ -88,4 +88,18 @@ public class Animal {
         System.out.println("Żywy?");
         return this.alive;
     }
+
+    public void sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price) {
+            System.out.println("nie masz $");
+        } else if (seller.pet == null) {
+            System.out.println("nie maszzwierzęcia");
+        } else if (seller.pet == this) {
+            seller.cash += price;
+            buyer.cash -= price;
+            seller.pet = null;
+            buyer.pet = this;
+            System.out.println("kupiłeś zwirze");
+        }
+    }
 }
