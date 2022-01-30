@@ -10,8 +10,9 @@ public class Human {
     public Animal pet;
     public Double cash;
     public Phone phone;
-    public Car car;
+    private Car car;
     public Human human;
+
     //kons człowieka
     public Human(String firstName, String lastName, Integer age, Double salary) {
         this.firstName = firstName;
@@ -19,6 +20,7 @@ public class Human {
         this.age = age;
         this.salary = salary;
     }
+
     //ustawia nowe wynagrodzenie
     void setSalary(Double salary) {
         if (salary < 0) {
@@ -32,6 +34,7 @@ public class Human {
         }
 
     }
+
     //ustawia wynagrodzenie
     Double getSalary() {
         System.out.println("wynagrodzenie:" + this.salary);
@@ -39,6 +42,8 @@ public class Human {
         System.out.println("wynagrodzenie:");
         return this.salary;
     }
+
+    //Kupuje samochoód
     public void setCar(Car car) {
         if (car.value > this.salary) {
             System.out.println("Kupiłeś samochód za gotówkę");

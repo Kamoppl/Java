@@ -10,7 +10,7 @@ public class Car   {
     public String toString() {
         return producer + " " + model + " " + color + " " + yearOfProduction + " " + value;
     }
-
+//konstruktor samochodu
     public Car(String color, Double value) {
         this.color = color;
         this.value = value;

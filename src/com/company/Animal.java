@@ -7,7 +7,7 @@ public class Animal {
     private Double weight;
     Integer age;
     Boolean alive;
-
+    //kostruktor zwierzecia
     public Animal(String species, String name, Double weight, Integer age, Boolean alive) {
         this.species = species;
         this.name = name;
@@ -29,7 +29,7 @@ public class Animal {
         else
             this.weight = 1.0;
     }
-
+    //zwierze idzie na spacer
     public void takeForWalk() {
         if (this.alive) {
             weight = weight - 1.0;
@@ -41,7 +41,7 @@ public class Animal {
             System.out.println("Your anima is dead, how you want to take him for a walk. Unless you are necromancer");
         }
     }
-
+    //karmi zwierze
     public void feed() {
         if (this.alive) weight = weight + 1.0;
 
@@ -50,7 +50,7 @@ public class Animal {
         }
 
     }
-
+    //pokazuje zwierze
     public void introduceYourself() {
         System.out.println("I`m " + this.name);
     }
@@ -59,7 +59,7 @@ public class Animal {
     Double getWeight() {
         return this.weight;
     }
-
+    //ustawia wage
     public void setWeight(Double weight) {
         if (weight > 0) {
             this.weight = weight;
@@ -67,6 +67,7 @@ public class Animal {
             System.out.println("error");
         }
     }
+    //pokazuje zwierze
     public boolean showAnimal() {
         System.out.println(this.species);
         System.out.println(this.name);
