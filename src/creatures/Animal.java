@@ -1,12 +1,16 @@
 
-package com.company;
+package creatures;
 
-public class Animal {
+import com.company.Human;
+
+public abstract class Animal implements Feedable {
     final String species;
-    String name;
+    public String name;
     private Double weight;
-    Integer age;
-    Boolean alive;
+    public Integer age;
+    public Boolean alive;
+    public Double DEFAULT_FOOD_WEIGHT = 1.0;
+
     //kostruktor zwierzecia
     public Animal(String species, String name, Double weight, Integer age, Boolean alive) {
         this.species = species;
@@ -53,15 +57,8 @@ public class Animal {
                 '}';
     }
 
-    //karmi zwierze
-    public void feed() {
-        if (this.alive) weight = weight + 1.0;
 
-        else {
-            System.out.println("Your animal is dead, how you want to feed him?");
-        }
 
-    }
     //pokazuje zwierze
     public void introduceYourself() {
         System.out.println("I`m " + this.name);
@@ -100,6 +97,17 @@ public class Animal {
             seller.pet = null;
             buyer.pet = this;
             System.out.println("kupiłeś zwirze");
+        }
+    }
+    public void feed(){
+            this.feed(DEFAULT_FOOD_WEIGHT);
+
+    }
+    public void feed(Double foodWeight){
+        if (this.alive) {this.weight+=foodWeight;}
+
+        else {
+            System.out.println("Your animal is dead, how you want to feed him?");
         }
     }
 }
