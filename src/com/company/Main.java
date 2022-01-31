@@ -3,6 +3,7 @@ package com.company;
 import creatures.Animal;
 import creatures.Feedable;
 import devices.Car;
+import devices.LPG;
 
 public class Main implements Feedable {
 
@@ -34,7 +35,7 @@ public class Main implements Feedable {
         Human Human2 = new Human("Andrzej", "Młotek", 21, 11000.0);
         //tworzenie zwierzęcia
 
-       // System.out.println(me.pet.showAnimal());
+        // System.out.println(me.pet.showAnimal());
         //tworzenie 2 samochodów
         // Car myCar = new Car("red", 200000.0);
         //  Car notMyCar = new Car("red", 200000.0);
@@ -46,6 +47,9 @@ public class Main implements Feedable {
         //     System.out.println("Tak");
         //
         // } else System.out.println("nie");
-
+        // LPG Szybki = new LPG("red",20.0);
+        // Szybki.refuel();
+        // Szybki.turnOn();
+        // Szybki.toString();
     }
 }

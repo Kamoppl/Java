@@ -44,4 +44,5 @@ abstract public class Car extends Devices {
     }
 
     abstract public void refuel();
+
 }

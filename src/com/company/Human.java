@@ -4,7 +4,10 @@ import creatures.Animal;
 import devices.Car;
 import devices.Phone;
 
-public class Human {
+import java.util.Arrays;
+
+public class Human extends Animal{
+    private final int Default_Garage_Size=3;
     String firstName;
     String lastName;
     Integer age;
@@ -12,20 +15,41 @@ public class Human {
     public Animal pet;
     public Double cash;
     public Phone phone;
-    private Car car;
     public Human human;
+    public Car[] garage ;
+
 
     //kons człowieka
     public Human(String firstName, String lastName, Integer age, Double salary) {
+        super("homo sapiens");
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.salary = salary;
+        this.garage= new Car[Default_Garage_Size];
+
+    }
+    Human(Integer garageSize){
+
+        super("homo sapiens");
+        this.garage=new[garageSize];
     }
 
+    @Override
     public String toString() {
-        return firstName + " " + lastName + " " + age + " " + salary + " " + pet;
-
+        return "Human{" +
+                "Default_Garage_Size=" + Default_Garage_Size +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                ", pet=" + pet +
+                ", cash=" + cash +
+                ", phone=" + phone +
+                ", human=" + human +
+                ", garage=" + Arrays.toString(garage) +
+                '}';
     }
 
     //ustawia nowe wynagrodzenie
@@ -67,4 +91,5 @@ public class Human {
     public void sale(Human seller, Human buyer, Double price) {
         System.out.println("Nie możesz kupic człowieka");
     }
+
 }
