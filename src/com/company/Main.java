@@ -34,20 +34,18 @@ public class Main implements Feedable {
         Human Human2 = new Human("Andrzej", "Młotek", 21, 11000.0);
         //tworzenie zwierzęcia
 
-        System.out.println(me.pet.showAnimal());
+       // System.out.println(me.pet.showAnimal());
         //tworzenie 2 samochodów
-        Car myCar = new Car("red", 200000.0);
-        Car notMyCar = new Car("red", 200000.0);
-        if (myCar.hashCode() == notMyCar.hashCode()) {
-            System.out.println("Tak");
-
-        } else System.out.println("nie");
-
-        //porównuje samochody
-        if (myCar.hashCode() == notMyCar.hashCode()) {
-            System.out.println("Tak");
-
-        } else System.out.println("nie");
+        // Car myCar = new Car("red", 200000.0);
+        //  Car notMyCar = new Car("red", 200000.0);
+        // if (myCar.hashCode() == notMyCar.hashCode()) {
+        //    System.out.println("Tak");
+        // } else System.out.println("nie");
+        //  //porównuje samochody
+        //  if (myCar.hashCode() == notMyCar.hashCode()) {
+        //     System.out.println("Tak");
+        //
+        // } else System.out.println("nie");
 
     }
 }

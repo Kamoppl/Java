@@ -1,19 +1,32 @@
 package devices;
 
 
-public class Car extends Devices  {
+abstract public class Car extends Devices {
     String color;
     public Double value;
+
+    public Car(String producer, String model, Integer yearOfProduction, String color, Double value) {
+        super(producer, model, yearOfProduction);
+        this.color = color;
+        this.value = value;
+    }
+
+    public Car(String color, Double value) {
+        super(color, value);
+    }
+
+
     //pokazuje samochód
     public String toString() {
         return producer + " " + model + " " + color + " " + yearOfProduction + " " + value;
     }
+
     //konstruktor samochodu
-    public Car(String color, Double value) {
-        super("Poland", "BMW", 2000);
-        this.color = color;
-        this.value = value;
-    }
+    //  public Car(String color, Double value) {
+    //    super("Poland", "BMW", 2000);
+    //  this.color = color;
+    //this.value = value;
+    //}
     public boolean showCar() {
         //pokazanie samochodu
         System.out.println("My car is " + this.model);
@@ -29,4 +42,6 @@ public class Car extends Devices  {
     public void turnOn() {
         System.out.println("przekreć kluczyk");
     }
+
+    abstract public void refuel();
 }
