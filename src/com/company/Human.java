@@ -6,8 +6,8 @@ import devices.Phone;
 
 import java.util.Arrays;
 
-public class Human extends Animal{
-    private final int Default_Garage_Size=3;
+public class Human extends Animal {
+    private final int Default_Garage_Size = 3;
     String firstName;
     String lastName;
     Integer age;
@@ -16,7 +16,7 @@ public class Human extends Animal{
     public Double cash;
     public Phone phone;
     public Human human;
-    public Car[] garage ;
+    public Car[] garage;
 
 
     //kons człowieka
@@ -27,13 +27,14 @@ public class Human extends Animal{
         this.lastName = lastName;
         this.age = age;
         this.salary = salary;
-        this.garage= new Car[Default_Garage_Size];
+        this.garage = new Car[Default_Garage_Size];
 
     }
-    Human(Integer garageSize){
+
+    Human(Integer garageSize) {
 
         super("homo sapiens");
-        this.garage=new[garageSize];
+        this.garage = new Car[garageSize];
     }
 
     @Override
@@ -75,18 +76,23 @@ public class Human extends Animal{
     }
 
     //Kupuje samochoód
-    public void setCar(Car car) {
+    public void setCar(Car car,Integer parkingLotNumber) {
         if (car.value > this.salary) {
             System.out.println("Kupiłeś samochód za gotówkę");
-            this.car = car;
+            this.garage[parkingLotNumber] = car;
         } else if (car.value / 12.0 < this.salary) {
             System.out.println("Kupiłes auto na kredyt");
-            this.car = car;
+            this.garage[parkingLotNumber] = car;
         } else {
             System.out.println("Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
 
     }
+
+    public Car getCar(Integer parkingLotNumber) {
+        return this.garage[parkingLotNumber];
+    }
+
 
     public void sale(Human seller, Human buyer, Double price) {
         System.out.println("Nie możesz kupic człowieka");

@@ -37,14 +37,14 @@ public class Main implements Feedable {
 
         // System.out.println(me.pet.showAnimal());
         //tworzenie 2 samochodów
-        // Car myCar = new Car("red", 200000.0);
-        //  Car notMyCar = new Car("red", 200000.0);
+         Car myCar = new Car("red", 200000.0);
+          Car notMyCar = new Car("red", 200000.0);
         // if (myCar.hashCode() == notMyCar.hashCode()) {
         //    System.out.println("Tak");
         // } else System.out.println("nie");
         //  //porównuje samochody
-        //  if (myCar.hashCode() == notMyCar.hashCode()) {
-        //     System.out.println("Tak");
+         if (myCar.hashCode() == notMyCar.hashCode()) {
+             System.out.println("Tak");
         //
         // } else System.out.println("nie");
         // LPG Szybki = new LPG("red",20.0);
