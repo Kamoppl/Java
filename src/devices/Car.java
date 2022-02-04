@@ -1,6 +1,8 @@
 package devices;
 
 
+import com.company.Human;
+
 abstract public class Car extends Devices {
     String color;
     public Double value;
@@ -11,15 +13,6 @@ abstract public class Car extends Devices {
         this.value = value;
     }
 
-    public Car(String color, Double value) {
-        super(color, value);
-    }
-
-
-    //pokazuje samochód
-    public String toString() {
-        return producer + " " + model + " " + color + " " + yearOfProduction + " " + value;
-    }
 
     //konstruktor samochodu
     //  public Car(String color, Double value) {
@@ -45,4 +38,33 @@ abstract public class Car extends Devices {
 
     abstract public void refuel();
 
+    public void sell(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price) {
+            System.out.println("kupujący ma za mało kasy");
+
+        } else if (seller.hasCar(this)) {
+            System.out.println("sprzedający nie ma auta");
+        } else if (buyer.hasFreeParkingLot(buyer)) {
+            System.out.println("kupujący nie ma miejsca");
+        } else {
+            seller.cash += price;
+            buyer.cash -= price;
+            buyer.addCar(seller, buyer, this);
+            seller.removeCar(seller, this);
+
+            System.out.println("Transakcja się powiodła");
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "color='" + color + '\'' +
+                ", value=" + value +
+                ", producer='" + producer + '\'' +
+                ", model='" + model + '\'' +
+                ", yearOfProduction=" + yearOfProduction +
+                '}';
+    }
 }
