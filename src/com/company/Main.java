@@ -67,7 +67,6 @@ public class Main implements Feedable {
         System.out.println(Human1.garage[2]);
         System.out.println(Human2.garage[0]+"bbbbbbbbb");
         System.out.println(Human2.garage[1]);
-        System.out.println(Human2.garage[2]);
 
         Human1.garage[0].sell(Human1,Human2,2000.0);
         System.out.println(Human1.garage[0]);
