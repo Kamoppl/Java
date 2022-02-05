@@ -8,7 +8,8 @@ import java.util.Arrays;
 
 public class Human extends Animal {
     private final int Default_Garage_Size = 3;
-    String firstName;
+
+    public String firstName;
     String lastName;
     Integer age;
     private Double salary;
@@ -18,6 +19,13 @@ public class Human extends Animal {
     public Human human;
     public Car[] garage;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
     //kons człowieka
     public Human(String firstName, String lastName, Integer age, Double salary, Double cash) {
@@ -29,13 +37,27 @@ public class Human extends Animal {
         this.salary = salary;
         this.garage = new Car[Default_Garage_Size];
         this.cash = cash;
+
+
+
     }
 
- /*   Human(Integer garageSize) {
+    public void addOwnerName(Integer number,Human buyer) {
+        buyer.garage[number].listOfOwners.add(this.firstName);
+
+    }
+
+    public String ownerName() {
+        return  this.firstName;
+    }
+
+
+
+    Human(Integer garageSize) {
 
         super("homo sapiens");
         this.garage = new Car[garageSize];
-    }*/
+    }
 
     @Override
     public String toString() {
@@ -152,19 +174,16 @@ public class Human extends Animal {
     }
 
 
-    public void addCar(Human seller, Human buyer, Car car) {
+    public void addCar(Human seller, Human buyer, Integer parkingSellerNumber) {
 
         int parkingNr = fineNextFree();
-        System.out.println(parkingNr);
+        buyer.garage[parkingNr] = seller.garage[parkingSellerNumber];
 
-        buyer.garage[parkingNr] = seller.garage[parkingNr];
+        seller.garage[parkingNr]=null;
+
+
 
 
     }
 
-
-    public void removeCar(Human seller, Car car) {
-        int numberCar = Arrays.asList(car).indexOf(car);
-        seller.garage[numberCar] = null;
-    }
 }
